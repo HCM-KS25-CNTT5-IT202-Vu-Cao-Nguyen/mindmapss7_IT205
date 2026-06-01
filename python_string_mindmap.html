@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Python String — Mindmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0e0e14;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  svg {
+    width: 1200px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Node styles */
+  .center-rect  { fill: #3a2e6e; stroke: #7c6fd4; stroke-width: 2; }
+  .center-text  { font-family: 'Be Vietnam Pro'; font-weight: 700; font-size: 20px; fill: #e0dbff; }
+  .center-sub   { font-family: 'Be Vietnam Pro'; font-weight: 400; font-size: 13px; fill: #a89de0; }
+
+  .branch-purple { fill: #2a2252; stroke: #7c6fd4; stroke-width: 1.5; }
+  .branch-teal   { fill: #1a3530; stroke: #3db892; stroke-width: 1.5; }
+  .branch-amber  { fill: #2e2010; stroke: #d49a2e; stroke-width: 1.5; }
+  .branch-coral  { fill: #2e1810; stroke: #d4613a; stroke-width: 1.5; }
+
+  .branch-text-purple { font-family: 'Be Vietnam Pro'; font-weight: 700; font-size: 15px; fill: #c4beff; }
+  .branch-text-teal   { font-family: 'Be Vietnam Pro'; font-weight: 700; font-size: 15px; fill: #9fe8c8; }
+  .branch-text-amber  { font-family: 'Be Vietnam Pro'; font-weight: 700; font-size: 15px; fill: #f0c060; }
+  .branch-text-coral  { font-family: 'Be Vietnam Pro'; font-weight: 700; font-size: 15px; fill: #f09070; }
+
+  .branch-sub-purple { font-family: 'Be Vietnam Pro'; font-size: 11px; fill: #8880c0; }
+  .branch-sub-teal   { font-family: 'Be Vietnam Pro'; font-size: 11px; fill: #5aaa88; }
+  .branch-sub-amber  { font-family: 'Be Vietnam Pro'; font-size: 11px; fill: #a07830; }
+  .branch-sub-coral  { font-family: 'Be Vietnam Pro'; font-size: 11px; fill: #a05030; }
+
+  .leaf-purple { fill: #1e1a3e; stroke: #5a50b0; stroke-width: 1; }
+  .leaf-teal   { fill: #122820; stroke: #2a8860; stroke-width: 1; }
+  .leaf-amber  { fill: #221808; stroke: #906820; stroke-width: 1; }
+  .leaf-coral  { fill: #221008; stroke: #904030; stroke-width: 1; }
+
+  .leaf-text-purple { font-family: 'Be Vietnam Pro'; font-weight: 600; font-size: 12px; fill: #b0a8e8; }
+  .leaf-text-teal   { font-family: 'Be Vietnam Pro'; font-weight: 600; font-size: 12px; fill: #80d0a8; }
+  .leaf-text-amber  { font-family: 'Be Vietnam Pro'; font-weight: 600; font-size: 12px; fill: #d0a048; }
+  .leaf-text-coral  { font-family: 'Be Vietnam Pro'; font-weight: 600; font-size: 12px; fill: #d08060; }
+
+  .leaf-sub-purple { font-family: 'Be Vietnam Pro'; font-size: 10px; fill: #6860a0; }
+  .leaf-sub-teal   { font-family: 'Be Vietnam Pro'; font-size: 10px; fill: #407858; }
+  .leaf-sub-amber  { font-family: 'Be Vietnam Pro'; font-size: 10px; fill: #705020; }
+  .leaf-sub-coral  { font-family: 'Be Vietnam Pro'; font-size: 10px; fill: #703828; }
+
+  .error-rect  { fill: #1a1a20; stroke: #444460; stroke-width: 1; }
+  .error-text  { font-family: 'Be Vietnam Pro'; font-weight: 600; font-size: 13px; fill: #9090c0; }
+  .error-sub   { font-family: 'Be Vietnam Pro'; font-size: 10px; fill: #505070; }
+
+  .line-purple { stroke: #5a50b0; stroke-width: 1.5; fill: none; }
+  .line-teal   { stroke: #2a8860; stroke-width: 1.5; fill: none; }
+  .line-amber  { stroke: #906820; stroke-width: 1.5; fill: none; }
+  .line-coral  { stroke: #904030; stroke-width: 1.5; fill: none; }
+  .line-gray   { stroke: #404060; stroke-width: 1.2; fill: none; stroke-dasharray: 6 4; }
+
+  .line-thin-purple { stroke: #3a3080; stroke-width: 1; fill: none; }
+  .line-thin-teal   { stroke: #1a6040; stroke-width: 1; fill: none; }
+  .line-thin-amber  { stroke: #604010; stroke-width: 1; fill: none; }
+  .line-thin-coral  { stroke: #602818; stroke-width: 1; fill: none; }
+
+  .title-label { font-family: 'Space Mono'; font-size: 11px; fill: #444466; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Watermark label -->
+  <text class="title-label" x="600" y="30" text-anchor="middle">PYTHON STRING — MINDMAP</text>
+
+  <!-- ========== CENTER ========== -->
+  <rect class="center-rect" x="468" y="400" width="264" height="70" rx="35"/>
+  <text class="center-text" x="600" y="430" text-anchor="middle" dominant-baseline="central">Python String</text>
+  <text class="center-sub"  x="600" y="452" text-anchor="middle" dominant-baseline="central">dãy ký tự có thứ tự · text sequence</text>
+
+  <!-- ============================================================ -->
+  <!--  BRANCH 1: INDEXING  (top-left, center ~x=200 y=220)        -->
+  <!-- ============================================================ -->
+  <!-- center → branch -->
+  <path class="line-purple" d="M510 408 Q360 310 260 260"/>
+  <!-- branch node -->
+  <rect class="branch-purple" x="120" y="218" width="200" height="58" rx="12"/>
+  <text class="branch-text-purple" x="220" y="240" text-anchor="middle" dominant-baseline="central">Indexing</text>
+  <text class="branch-sub-purple"  x="220" y="258" text-anchor="middle" dominant-baseline="central">truy cập từng ký tự</text>
+
+  <!-- branch → Positive index (top-left leaf, x=60 y=110) -->
+  <path class="line-thin-purple" d="M158 220 Q110 170 80 148"/>
+  <rect class="leaf-purple" x="20" y="98" width="160" height="52" rx="10"/>
+  <text class="leaf-text-purple" x="100" y="116" text-anchor="middle" dominant-baseline="central">Positive index</text>
+  <text class="leaf-sub-purple"  x="100" y="134" text-anchor="middle" dominant-baseline="central">0, 1, 2… trái → phải</text>
+
+  <!-- branch → Negative index (x=230 y=110) -->
+  <path class="line-thin-purple" d="M220 218 Q220 170 220 148"/>
+  <rect class="leaf-purple" x="140" y="98" width="160" height="52" rx="10"/>
+  <text class="leaf-text-purple" x="220" y="116" text-anchor="middle" dominant-baseline="central">Negative index</text>
+  <text class="leaf-sub-purple"  x="220" y="134" text-anchor="middle" dominant-baseline="central">-1, -2… phải → trái</text>
+
+  <!-- branch → Immutability (x=370 y=110) -->
+  <path class="line-thin-purple" d="M280 220 Q330 168 368 148"/>
+  <rect class="leaf-coral" x="298" y="98" width="160" height="52" rx="10"/>
+  <text class="leaf-text-coral"  x="378" y="116" text-anchor="middle" dominant-baseline="central">Immutability</text>
+  <text class="leaf-sub-coral"   x="378" y="134" text-anchor="middle" dominant-baseline="central">không sửa ký tự gốc</text>
+
+  <!-- branch → IndexError (x=80 y=330) -->
+  <path class="line-thin-purple" d="M156 276 Q110 310 88 330"/>
+  <rect class="error-rect" x="20" y="322" width="168" height="48" rx="10"/>
+  <text class="error-text" x="104" y="340" text-anchor="middle" dominant-baseline="central">IndexError</text>
+  <text class="error-sub"  x="104" y="358" text-anchor="middle" dominant-baseline="central">truy cập vượt độ dài chuỗi</text>
+
+  <!-- branch → TypeError (x=80 y=420) -->
+  <path class="line-thin-purple" d="M138 276 Q100 360 80 406"/>
+  <rect class="error-rect" x="20" y="398" width="168" height="48" rx="10"/>
+  <text class="error-text" x="104" y="416" text-anchor="middle" dominant-baseline="central">TypeError</text>
+  <text class="error-sub"  x="104" y="434" text-anchor="middle" dominant-baseline="central">gán lại ký tự trong chuỗi</text>
+
+  <!-- ============================================================ -->
+  <!--  BRANCH 2: SLICING  (top-right, center ~x=1000 y=220)       -->
+  <!-- ============================================================ -->
+  <path class="line-teal" d="M690 408 Q840 310 940 260"/>
+  <rect class="branch-teal" x="880" y="218" width="200" height="58" rx="12"/>
+  <text class="branch-text-teal" x="980" y="240" text-anchor="middle" dominant-baseline="central">Slicing</text>
+  <text class="branch-sub-teal"  x="980" y="258" text-anchor="middle" dominant-baseline="central">cắt chuỗi theo đoạn</text>
+
+  <!-- branch → [start:stop:step] (x=830 y=110) -->
+  <path class="line-thin-teal" d="M922 220 Q890 168 868 148"/>
+  <rect class="leaf-teal" x="770" y="98" width="196" height="52" rx="10"/>
+  <text class="leaf-text-teal" x="868" y="116" text-anchor="middle" dominant-baseline="central">[start : stop : step]</text>
+  <text class="leaf-sub-teal"  x="868" y="134" text-anchor="middle" dominant-baseline="central">exclusive stop — không lấy vị trí stop</text>
+
+  <!-- branch → step âm (x=1060 y=110) -->
+  <path class="line-thin-teal" d="M1040 220 Q1060 168 1062 148"/>
+  <rect class="leaf-teal" x="970" y="98" width="160" height="52" rx="10"/>
+  <text class="leaf-text-teal" x="1050" y="116" text-anchor="middle" dominant-baseline="central">Step âm ([::-1])</text>
+  <text class="leaf-sub-teal"  x="1050" y="134" text-anchor="middle" dominant-baseline="central">đảo ngược chuỗi</text>
+
+  <!-- branch → Toán tử + và * (x=1060 y=330) -->
+  <path class="line-thin-teal" d="M1040 276 Q1060 310 1062 330"/>
+  <rect class="leaf-teal" x="978" y="322" width="160" height="52" rx="10"/>
+  <text class="leaf-text-teal" x="1058" y="340" text-anchor="middle" dominant-baseline="central">Toán tử + và *</text>
+  <text class="leaf-sub-teal"  x="1058" y="358" text-anchor="middle" dominant-baseline="central">nối / lặp chuỗi</text>
+
+  <!-- branch → Không IndexError (x=860 y=330) -->
+  <path class="line-thin-teal" d="M960 276 Q940 310 930 330"/>
+  <rect class="error-rect" x="826" y="322" width="200" height="52" rx="10"/>
+  <text class="error-text" x="926" y="340" text-anchor="middle" dominant-baseline="central">An toàn khi cắt</text>
+  <text class="error-sub"  x="926" y="358" text-anchor="middle" dominant-baseline="central">vượt giới hạn không báo lỗi</text>
+
+  <!-- ============================================================ -->
+  <!--  BRANCH 3: STRING METHODS  (bottom-left, ~x=200 y=680)      -->
+  <!-- ============================================================ -->
+  <path class="line-amber" d="M510 462 Q360 560 260 620"/>
+  <rect class="branch-amber" x="100" y="618" width="230" height="58" rx="12"/>
+  <text class="branch-text-amber" x="215" y="640" text-anchor="middle" dominant-baseline="central">String Methods</text>
+  <text class="branch-sub-amber"  x="215" y="658" text-anchor="middle" dominant-baseline="central">xử lý và chuẩn hóa chuỗi</text>
+
+  <!-- branch → Case methods (x=80 y=740) -->
+  <path class="line-thin-amber" d="M152 676 Q110 710 88 734"/>
+  <rect class="leaf-amber" x="20" y="726" width="170" height="52" rx="10"/>
+  <text class="leaf-text-amber" x="105" y="744" text-anchor="middle" dominant-baseline="central">Case methods</text>
+  <text class="leaf-sub-amber"  x="105" y="762" text-anchor="middle" dominant-baseline="central">upper / lower / title</text>
+
+  <!-- branch → .strip() (x=230 y=740) -->
+  <path class="line-thin-amber" d="M215 676 Q215 710 215 734"/>
+  <rect class="leaf-amber" x="130" y="726" width="170" height="52" rx="10"/>
+  <text class="leaf-text-amber" x="215" y="744" text-anchor="middle" dominant-baseline="central">.strip()</text>
+  <text class="leaf-sub-amber"  x="215" y="762" text-anchor="middle" dominant-baseline="central">xóa khoảng trắng 2 đầu</text>
+
+  <!-- branch → split / join (x=380 y=740) -->
+  <path class="line-thin-amber" d="M275 676 Q330 710 356 734"/>
+  <rect class="leaf-amber" x="272" y="726" width="170" height="52" rx="10"/>
+  <text class="leaf-text-amber" x="357" y="744" text-anchor="middle" dominant-baseline="central">split / join</text>
+  <text class="leaf-sub-amber"  x="357" y="762" text-anchor="middle" dominant-baseline="central">tách và nối chuỗi</text>
+
+  <!-- branch → Method chaining (x=120 y=840) -->
+  <path class="line-thin-amber" d="M180 676 Q150 790 140 818"/>
+  <rect class="leaf-amber" x="50" y="810" width="190" height="52" rx="10"/>
+  <text class="leaf-text-amber" x="145" y="828" text-anchor="middle" dominant-baseline="central">Method chaining</text>
+  <text class="leaf-sub-amber"  x="145" y="846" text-anchor="middle" dominant-baseline="central">gọi phương thức liên tiếp</text>
+
+  <!-- branch → Normalization (x=350 y=840) -->
+  <path class="line-thin-amber" d="M248 676 Q300 790 320 818"/>
+  <rect class="leaf-amber" x="240" y="810" width="190" height="52" rx="10"/>
+  <text class="leaf-text-amber" x="335" y="828" text-anchor="middle" dominant-baseline="central">Normalization</text>
+  <text class="leaf-sub-amber"  x="335" y="846" text-anchor="middle" dominant-baseline="central">đưa dữ liệu về chuẩn chung</text>
+
+  <!-- ============================================================ -->
+  <!--  BRANCH 4: F-STRING  (bottom-right, ~x=1000 y=680)          -->
+  <!-- ============================================================ -->
+  <path class="line-coral" d="M690 462 Q840 560 940 620"/>
+  <rect class="branch-coral" x="870" y="618" width="220" height="58" rx="12"/>
+  <text class="branch-text-coral" x="980" y="640" text-anchor="middle" dominant-baseline="central">F-String</text>
+  <text class="branch-sub-coral"  x="980" y="658" text-anchor="middle" dominant-baseline="central">định dạng chuỗi hiện đại</text>
+
+  <!-- branch → f"..." syntax (x=840 y=740) -->
+  <path class="line-thin-coral" d="M928 676 Q900 710 880 734"/>
+  <rect class="leaf-coral" x="768" y="726" width="200" height="52" rx="10"/>
+  <text class="leaf-text-coral" x="868" y="744" text-anchor="middle" dominant-baseline="central">Cú pháp f"..." và {}</text>
+  <text class="leaf-sub-coral"  x="868" y="762" text-anchor="middle" dominant-baseline="central">nhúng biến/biểu thức trực tiếp</text>
+
+  <!-- branch → Format specifier (x=1010 y=740) -->
+  <path class="line-thin-coral" d="M985 676 Q985 710 985 734"/>
+  <rect class="leaf-coral" x="890" y="726" width="190" height="52" rx="10"/>
+  <text class="leaf-text-coral" x="985" y="744" text-anchor="middle" dominant-baseline="central">Format specifier</text>
+  <text class="leaf-sub-coral"  x="985" y="762" text-anchor="middle" dominant-baseline="central">.2f · , · 05d · &lt;10</text>
+
+  <!-- branch → Tính toán trong {} (x=1130 y=740) -->
+  <path class="line-thin-coral" d="M1030 676 Q1090 710 1116 734"/>
+  <rect class="leaf-coral" x="1026" y="726" width="158" height="52" rx="10"/>
+  <text class="leaf-text-coral" x="1105" y="744" text-anchor="middle" dominant-baseline="central">Tính toán trong {}</text>
+  <text class="leaf-sub-coral"  x="1105" y="762" text-anchor="middle" dominant-baseline="central">f"{2+2}" → "4"</text>
+
+  <!-- branch → Nhanh hơn % .format() (x=870 y=840) -->
+  <path class="line-thin-coral" d="M958 676 Q920 790 900 818"/>
+  <rect class="leaf-coral" x="790" y="810" width="220" height="52" rx="10"/>
+  <text class="leaf-text-coral" x="900" y="828" text-anchor="middle" dominant-baseline="central">Nhanh hơn % và .format()</text>
+  <text class="leaf-sub-coral"  x="900" y="846" text-anchor="middle" dominant-baseline="central">runtime evaluation</text>
+
+  <!-- branch → Literal String Interpolation (x=1090 y=840) -->
+  <path class="line-thin-coral" d="M1010 676 Q1060 790 1080 818"/>
+  <rect class="leaf-coral" x="990" y="810" width="198" height="52" rx="10"/>
+  <text class="leaf-text-coral" x="1089" y="828" text-anchor="middle" dominant-baseline="central">Interpolation</text>
+  <text class="leaf-sub-coral"  x="1089" y="846" text-anchor="middle" dominant-baseline="central">tên kỹ thuật chính thức</text>
+
+  <!-- ============================================================ -->
+  <!--  BOTTOM CENTER: Lỗi chung                                   -->
+  <!-- ============================================================ -->
+  <path class="line-gray" d="M600 470 L600 840"/>
+  <rect class="error-rect" x="440" y="840" width="320" height="52" rx="14"/>
+  <text class="error-text" x="600" y="858" text-anchor="middle" dominant-baseline="central">Lỗi thường gặp chung</text>
+  <text class="error-sub"  x="600" y="876" text-anchor="middle" dominant-baseline="central">IndexError · TypeError · Off-by-one · Nhầm chỉ số stop</text>
+
+</svg>
+</body>
+</html>
